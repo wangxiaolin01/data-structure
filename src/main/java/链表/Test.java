@@ -22,6 +22,7 @@ public class Test {
 //        List<Integer> list = new LinkedList_Shuangxiang();
 //        list.add(1);
 //        list.add(2);
+
 //
 ////        System.out.println(list);
 //        LinkedList<Integer> linkedList = new LinkedList<>();
