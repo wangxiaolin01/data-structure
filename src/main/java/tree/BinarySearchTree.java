@@ -124,6 +124,26 @@ public class BinarySearchTree<E> {
         return height;
     }
 
+    
+    public boolean isComplete(){
+        if (root == null) return false;
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.offer(root);
+
+        boolean leaf = false;
+        while (!queue.isEmpty()){
+            Node<E> node = queue.poll();
+            if (node.left != null && node.left != null){
+                queue.offer(node.left);
+                queue.offer(node.right);
+            }else if(node.left ==null && node.right != null){
+                return false;
+            }else { //后面遍历的节点都必须是叶子节点
+
+            }
+        }
+        return false;
+    }
 //    public int compareTo(E o) {
 //        return 0;
 //    }
@@ -253,6 +273,22 @@ public class BinarySearchTree<E> {
             this.element = element;
             this.parent = parent;
 
+        }
+
+        /**
+         * 判断是不是叶子节点
+         * @return
+         */
+        public boolean  isLeaf(){
+            return  left == null && right == null;
+        }
+
+        /**
+         * 判断是不是有两个节点
+         * @return
+         */
+        public boolean hasTwoChild(){
+            return left != null && right != null;
         }
 
     }
